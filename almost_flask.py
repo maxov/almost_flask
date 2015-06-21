@@ -1,0 +1,5 @@
+from http.server import*;from http.cookies import*;from re import*;from urllib.parse import*;from uuid import*
+N,m,n,c,o=None,[],{},lambda n,d={}:type(n,(object,),d),'GET POST PUT DELETE'.split()
+def h(s):C=SimpleCookie();C.load(s.headers.get('Cookie',N) or{});S=C.get('s');S=S.value if S else uuid4().hex;i.clear();i.update(n.get(S,{}));a=urlparse(s.path);p,c=r.path,r.method=unquote(a.path),s.command;r.args=dict(parse_qsl(a.query));u,e,f=([(u.match(p).groupdict(),e,f) for u,e,f in m if u.match(p)]+[({},o,lambda:'404')])[0];t=f(**u)if c in e else '405';s.send_response(200+204*(t=='404')+205*(t=='405'));s.send_header('Content-type','text/html');s.send_header('Set-Cookie', 's=%s'%S);s.end_headers();s.wfile.write(t.encode());n[S]=i.copy()
+R,Flask=type('R',(BaseHTTPRequestHandler,),{'do_'+t:h for t in o}),c('Flask',dict(__init__=lambda s,n:N,route=lambda s,u,methods=['GET']:lambda f:m.append((compile('^%s$'%sub('(<[^>]*>)','(?P\\1[^/]+)',u)),methods,f)),run=lambda s,b=('127.0.0.1',5000):print('* Running on http://%s:%d/'%b)/HTTPServer(b, R).serve_forever()))
+session,request=i,r={},c('')()
