@@ -22,7 +22,7 @@ def home():
 def hello():
     return 'Hello'
 
-@app.route('/hello/<name>', methods=['GET, POST, PUT'])
+@app.route('/hello/<name>', methods=['GET', 'POST', 'PUT'])
 def hello_to(name):
     return 'Hello to %s (args %s, path %s, method %s)' % (name, request.args, request.path, request.method)
 
