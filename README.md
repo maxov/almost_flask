@@ -35,7 +35,7 @@ way you also avoid running the wrong version by accident.
 
 ## Performance??
 
-    $ sloccount alomst_flask.py
+    $ sloccount almost_flask.py
     Total Physical Source Lines of Code (SLOC)                = 5
     Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.01)
      (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
